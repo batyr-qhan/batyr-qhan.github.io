@@ -3,7 +3,7 @@ function getRandomInt(max) {
 }
 
 function fetchingData(number) {
-    fetch(`http://xkcd.com/${number}/info.0.json`, {
+    fetch(`https://xkcd.com/${number}/info.0.json`, {
         method: 'GET'
     }).then(res => res.json()).then(data => {
         let date = `${data.year}.${data.month}.${data.day}`;
