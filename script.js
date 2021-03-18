@@ -3,11 +3,8 @@ function getRandomInt(max) {
 }
 
 function fetchingData(number) {
-    fetch(`https://thingproxy.freeboard.io/fetch/http://xkcd.com/${number}/info.0.json`, {
-        method: 'GET',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
+    fetch(`http://xkcd.com/${number}/info.0.json`, {
+        method: 'GET'
     }).then(res => res.json()).then(data => {
         let date = `${data.year}.${data.month}.${data.day}`;
         document.getElementById('picture').setAttribute('src', data['img']);
